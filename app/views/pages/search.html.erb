@@ -1,0 +1,19 @@
+<h1><%= @q %> parking</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parkings.each do |parking| %>
+      <tr>
+        <td><%= parking.direccion %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

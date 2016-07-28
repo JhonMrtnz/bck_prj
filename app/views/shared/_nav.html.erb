@@ -1,0 +1,21 @@
+	<nav><!-- top nav -->
+		<div class="menu">
+			<ul>
+				<li><%= link_to 'Home', index_path %></li>
+				<li><%= link_to 'Parking', parkings_path %></li>
+				<li><a href="#">Reserva</a></li>
+			<!--	<li><a href="#">Eventos</a></li> -->
+				<li><%= link_to 'Distritos', distritos_path %></li>
+				<li><%= link_to 'Agregados', agregados_path %></li>
+				<% if user_signed_in? %>
+					<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+				<% else %>
+					<li><%= link_to "Login", new_user_session_path %></li>
+				<% end %>
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+	
+	<% if user_signed_in? %>
+		Bienvenido <%= current_user.email %>
+	<% end %>

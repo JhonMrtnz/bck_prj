@@ -1,0 +1,32 @@
+<%= simple_form_for(@parking, html: { multipart: true }) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :direccion %>
+    <%= f.input :correo %>
+    <%= f.input :telefono %>
+    <%= f.input :movil %>
+    <%= f.input :costoxdia %>
+    <%= f.input :costoxhora %>
+
+  <div class="field">
+    <%= f.label :Distrito %><br>
+    <%= f.collection_select :distrito_id, Distrito.all, :id, :nombre, :prompt => true %> 
+  </div>
+    <div class="field">
+    <%= f.label :Agregado %><br>
+    <%= f.collection_select :agregado_id, Agregado.all, :id, :descripcion, :prompt => true %> 
+  </div>
+  
+    <div class="field">
+        <%= f.label :Imagen %>
+        <%= f.file_field :avatar %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
